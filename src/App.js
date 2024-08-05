@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // Import your styles
+import Header from './components/landing-page/Header';
+import Main from './components/landing-page/Main';
+import Sidebar from './components/landing-page/Sidebar';
+import { CustomProvider } from 'rsuite';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <CustomProvider theme='light'>
+      <div className='pt-[15vh]'>
+        <Header />
+        <Main />
+      </div>
+    </CustomProvider>
+  )
 }
 
-export default App;
