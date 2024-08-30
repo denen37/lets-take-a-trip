@@ -4,9 +4,9 @@ import Sidebar from './Sidebar'
 import Middle from './Middle'
 import Notification from '../Notification/Notification'
 
-const Main = () => {
+const Dashboard = () => {
     return (
-        <div className='bg-[#c1c3c5] flex pr-4 pb-6'>
+        <div className='bg-gray-300 flex pr-4 pb-6'>
             <div className='w-[18%] flex flex-col'>
                 <Sidebar />
             </div>
@@ -27,4 +27,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default Dashboard

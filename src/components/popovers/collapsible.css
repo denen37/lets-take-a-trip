@@ -1,0 +1,9 @@
+.Collapsible__contentInner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #8c8e91;
+    font-weight: 300;
+    padding: 5px 0px;
+    background-color: #e4e3e3;
+}

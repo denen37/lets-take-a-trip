@@ -1,0 +1,15 @@
+:root {
+    --swiper-theme-color: #FF6600;
+    --swiper-navigation-size: 30px;
+    /* --swiper-pagination-bottom: -15px; */
+}
+
+.swiper .swiper-button-prev:after,
+.swiper .swiper-button-next:after {
+    opacity: 0;
+}
+
+.swiper:hover .swiper-button-prev:after,
+.swiper:hover .swiper-button-next:after {
+    opacity: 1;
+}

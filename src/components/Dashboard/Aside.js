@@ -7,11 +7,14 @@ import location from '../../assets/icons/location.png'
 import calendar from '../../assets/icons/calendar.png'
 import star from '../../assets/icons/star.png'
 import { recentActivities } from '../../data/places'
+import { useNavigate } from "react-router-dom";
+
 
 const Aside = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hasNext, setHasNext] = useState(true);
     const [hasPrev, setHasPrev] = useState(false);
+    const navigate = useNavigate();
 
     const handleMovePrev = () => {
         let index
@@ -43,7 +46,11 @@ const Aside = () => {
                 <img src={user} alt='' className='bg-[#f3d4bf] w-[110px] aspect-square rounded-full mt-3' />
                 <p className='font-bold'>John Doe</p>
                 <p className='text-center'>2 CD, California, United States</p>
-                <button className='text-white bg-[#f16620] hover:opacity-75 active:opacity-100 transition-colors rounded-[10px] px-3 py-1 text-base mt-3'>Create a learning profile</button>
+                <button className='text-white bg-[#f16620] hover:opacity-75 active:opacity-100 transition-colors rounded-[10px] px-3 py-1 text-base mt-3'
+                    onClick={() => navigate('account')}
+                >
+                    View Profile
+                </button>
             </div>
             <div className='bg-[#f0f1f1] rounded-xl p-3 mt-6'>
                 <div className='py-[2px] px-3 w-fit rounded-e-full rounded-tl-full bg-[#f16620] text-white'>New</div>

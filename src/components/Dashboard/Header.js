@@ -8,6 +8,8 @@ import gift from '../../assets/icons/offer-box.png'
 import { Popover, ArrowContainer } from 'react-tiny-popover'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRectangleXmark, faXmark } from '@fortawesome/free-solid-svg-icons'
+import logo from '../../assets/images/Let’s_take _a _trip _logo.png'
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
@@ -18,7 +20,12 @@ const Header = () => {
 
 
     return (
-        <div className='h-[15vh] flex items-center bg-white gap-10 px-6 fixed top-0 right-0 left-[17%] z-10'>
+        <div className='h-[15vh] flex items-center bg-white gap-10 px-6 fixed top-0 right-0 left-0 z-[100]'>
+            <Link to={'/'}>
+                <div className='w-[150px] px-4 cursor-pointer'>
+                    <img src={logo} alt='' className='w-full' />
+                </div>
+            </Link>
             <div className='flex flex-1 items-center px-2 py-1 gap-3 rounded-s-full rounded-e-full border-2 border-solid transition-colors'
                 style={{ borderColor: inputHasFocus ? '#f4712f' : '#d1d5db' }}>
                 <div className='w-[30px] box-border p-1  rounded-md cursor-pointer hover:bg-gray-200 active:bg-gray-100 transition-colors'>

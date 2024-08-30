@@ -23,5 +23,27 @@
     /* border: 3px solid var(--primary); */
 }
 
+
+
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Bahnschrift', sans-serif;
+    src: url('assets/fonts/BAHNSCHRIFT.TTF');
+}
+
+/* :root {
+    --swiper-theme-color: #FF6600;
+    --swiper-navigation-size: 30px;
+} */
+
+body {
+    font-family: 'Bahnschrift';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

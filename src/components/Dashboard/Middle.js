@@ -35,7 +35,7 @@ const Middle = () => {
 
                     </div>
                     <div>
-                        <p className='text-base text-[#848588]'>
+                        <p className='text-base text-[#848588] font-light'>
                             Welcome back!, Let's Take a Trip offers a complete range of services for a hassle-free
                             travel experience, from visas to tours.
                         </p>
