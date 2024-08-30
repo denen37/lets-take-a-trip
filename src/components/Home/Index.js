@@ -30,8 +30,8 @@ const Index = () => {
     }
 
     return (
-        <div className='grid grid-cols-[1fr_40vw] border border-gray-500 rounded-3xl relative px-6 py-6'>
-            <div className='h-full rounded-3xl relative flex items-center'
+        <div className='grid grid-cols-[1fr_40vw] relative h-screen'>
+            <div className='h-full rounded-e-3xl relative flex items-center'
                 style={{ backgroundImage: 'url(/images/Home/UK_image.webp)' }}>
                 <div className='max-w-[300px] ms-auto px-6 me-10 mt-10'>
                     <h1 className='text-6xl font-bold text-white'>Life is a journey.</h1>
@@ -49,7 +49,7 @@ const Index = () => {
                     <img src={logo} className='w-full' />
                 </div>
             </div>
-            <div className='flex flex-col items-center px-14 py-5 gap-16 relative'>
+            <div className='flex flex-col items-center px-14 py-8 gap-16 relative'>
                 <div className='flex items-center gap-10'>
                     <div className='flex items-center gap-4'>
                         <Link className='rounded-full py-1 px-4 border border-orange-600 text-orange-600 transition-colors duration-300 hover:bg-orange-600 hover:text-white' to={'/signup'} >Register</Link>
