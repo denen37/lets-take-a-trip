@@ -1,7 +1,7 @@
 import React from 'react'
-import pointer from '../../assets/icons/Asset 5logos.png'
 import MustWatch from './MustWatch'
 import FeaturedContent from './FeaturedContent'
+import { images } from '../../assets/resources'
 
 const L_Middle = () => {
     return (
@@ -10,7 +10,7 @@ const L_Middle = () => {
                 <div className='mt-6'>
                     <div className='flex items-start gap-3'>
                         <div className='w-16'>
-                            <img className='w-full' src={pointer} alt='' />
+                            <img className='w-full' src={images.bubble} alt='' />
                         </div>
                         <h1 className='text-3xl font-normal'>Your Travel Adventure Starts Here</h1>
 

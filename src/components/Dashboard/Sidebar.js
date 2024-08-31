@@ -1,45 +1,31 @@
 import React, { useState } from 'react'
-import more from '../../assets/icons/more-btn.png'
-import refresh from '../../assets/icons/circular-arrow.png'
-import dashboard_light from '../../assets/icons/dashboard_light2.png'
-import dashboard_gray from '../../assets/icons/dashboard_gray.png'
-import passport_gray from '../../assets/icons/passport_gray.png'
-import passport_light from '../../assets/icons/passport_light.png'
-import hotel_light from '../../assets/icons/hotel_light2.png'
-import arrow_right from '../../assets/icons/arrow-right.png'
-import hotel_gray from '../../assets/icons/hotel_gray.png'
-import inbox_gray from '../../assets/icons/inbox_gray.png'
-import inbox_light from '../../assets/icons/inbox_light.png'
-import settings from '../../assets/icons/settings.png'
-import user_edit from '../../assets/icons/image-user-edit.png'
-import logout from '../../assets/icons/logout.png'
-import SidebarMorePopover from '../popovers/SidebarMorePopover'
-import collapse from '../../assets/icons/collapse.png'
 import { useImmer } from 'use-immer'
 import { useNavigate } from 'react-router-dom'
+import { images } from '../../assets/resources'
+import SidebarMorePopover from '../popovers/SidebarMorePopover'
 import AccountSettingsPopover from '../popovers/AccountSettingsPopover'
 
 const buttonsInit = [
     {
-        name: 'Dashboard', icon: function () { return this.hover ? dashboard_light : dashboard_gray },
+        name: 'Dashboard', icon: function () { return this.hover ? images.dashboard_light : images.dashboard_gray },
         active: true, hasOptions: false, hover: false, component: function () {
             return null;
         }
     },
     {
-        name: 'Hotel', icon: function () { return this.hover ? hotel_light : hotel_gray },
+        name: 'Hotel', icon: function () { return this.hover ? images.hotel_light : images.hotel_gray },
         active: false, hasOptions: false, hover: false, component: function () {
             return null;
         }
     },
     {
-        name: 'My VISA', icon: function () { return this.hover ? passport_light : passport_gray },
+        name: 'My VISA', icon: function () { return this.hover ? images.passport_light : images.passport_gray },
         active: false, hasOptions: false, hover: false, component: function () {
             return null;
         }
     },
     {
-        name: 'Inbox', icon: function () { return this.hover ? inbox_light : inbox_gray },
+        name: 'Inbox', icon: function () { return this.hover ? images.inbox_light : images.inbox_gray },
         active: false, hasOptions: true, options: [], hover: false, component: function () {
             return null;
         }
@@ -70,7 +56,7 @@ const Sidebar = () => {
                 <p className='font-[500] group-hover:text-white'>{button.name}</p>
             </div>
             {
-                button.hasOptions && <img src={arrow_right} alt='' className={`w-[15px] transition-transform duration-300`} />
+                button.hasOptions && <img src={images.arrow_right} alt='' className={`w-[15px] transition-transform duration-300`} />
             }
         </button>
     }
@@ -84,12 +70,12 @@ const Sidebar = () => {
                         <p className='text-[#f7a679]' onClick={() => navigate('/learning')}>Learning...</p>
                     </button>
                     <button className='p-1 w-[30px] flex justify-center items-center aspect-square bg-[rgb(199,200,201)] hover:opacity-75 active:opacity-100 transition-colors rounded-lg'>
-                        <img src={refresh} alt='' className='w-full' />
+                        <img src={images.refresh} alt='' className='w-full' />
                     </button>
                     <SidebarMorePopover
                         trigger={
                             <button className='hover:opacity-75 active:opacity-100 transition-colors'>
-                                <img src={more} alt='' className='w-6' />
+                                <img src={images.more} alt='' className='w-6' />
                             </button>
                         } />
                 </div>
@@ -105,22 +91,22 @@ const Sidebar = () => {
             <div className='bg-[#e1e5e7] pb-8 pt-5 flex-1 flex flex-col justify-end'>
                 <div className='flex flex-col gap-8 px-4'>
                     <div className='flex items-center cursor-pointer gap-4'>
-                        <img src={collapse} alt='' className='w-[20px]' />
+                        <img src={images.collapse} alt='' className='w-[20px]' />
                         <p className='text-[#8c8e91] hover:text-[#FF6600] transition-colors font-[500]'>Collapse</p>
                     </div>
                     <div className='flex flex-col gap-5'>
                         <div className='flex items-center cursor-pointer gap-4'>
-                            <img src={settings} alt='' className='w-[20px]' />
+                            <img src={images.settings} alt='' className='w-[20px]' />
                             <p className='text-[rgb(140,142,145)] hover:text-[#FF6600] transition-colors cursor-pointer font-[500]'>FAQ</p>
                         </div>
                         <div className='flex items-center cursor-pointer gap-4'>
-                            <img src={user_edit} alt='' className='w-[20px]' />
+                            <img src={images.user_edit} alt='' className='w-[20px]' />
                             <p className='text-[#8c8e91] hover:text-[#FF6600] transition-colors font-[500] flex-1'>Support</p>
 
                             <AccountSettingsPopover />
                         </div>
                         <div className='flex items-center cursor-pointer gap-4'>
-                            <img src={logout} alt='' className='w-[25px]' />
+                            <img src={images.logout} alt='' className='w-[25px]' />
                             <p className='text-[#8c8e91] hover:text-[#FF6600] transition-colors font-[500]'>Logout</p>
                         </div>
                     </div>

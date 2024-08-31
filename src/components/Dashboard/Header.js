@@ -1,14 +1,8 @@
 import React, { useState } from 'react'
-import search from '../../assets/icons/search.png'
-import filter from '../../assets/icons/filter.png'
-import image_search from '../../assets/icons/Asset 7logos.png'
-import save from '../../assets/icons/save.png'
-import bell from '../../assets/icons/bell.png'
-import gift from '../../assets/icons/offer-box.png'
 import { Popover, ArrowContainer } from 'react-tiny-popover'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRectangleXmark, faXmark } from '@fortawesome/free-solid-svg-icons'
-import logo from '../../assets/images/Let’s_take _a _trip _logo.png'
+import { images } from '../../assets/resources'
 import { Link } from 'react-router-dom'
 
 
@@ -23,13 +17,13 @@ const Header = () => {
         <div className='h-[15vh] flex items-center bg-white gap-10 px-6 fixed top-0 right-0 left-0 z-[100]'>
             <Link to={'/'}>
                 <div className='w-[150px] px-4 cursor-pointer'>
-                    <img src={logo} alt='' className='w-full' />
+                    <img src={images.logo} alt='' className='w-full' />
                 </div>
             </Link>
             <div className='flex flex-1 items-center px-2 py-1 gap-3 rounded-s-full rounded-e-full border-2 border-solid transition-colors'
                 style={{ borderColor: inputHasFocus ? '#f4712f' : '#d1d5db' }}>
                 <div className='w-[30px] box-border p-1  rounded-md cursor-pointer hover:bg-gray-200 active:bg-gray-100 transition-colors'>
-                    <img className='w-full' src={search} alt="" />
+                    <img className='w-full' src={images.search} alt="" />
                 </div>
 
                 <input className='px-2 flex-1 py-1 border-l-2 border-r-2 border-solid border-gray-400 focus:outline-none'
@@ -75,7 +69,7 @@ const Header = () => {
                             className='bg-gray-100 hover:bg-gray-200 active:bg-gray-100 transition-colors rounded-md w-[30px] box-border p-1 cursor-pointer'
                             onClick={() => setIsPopoverOpen(!isPopoverOpen)}
                         >
-                            <img className='w-full' src={filter} alt="" />
+                            <img className='w-full' src={images.filter} alt="" />
                         </div>
                     </Popover>
 
@@ -102,7 +96,7 @@ const Header = () => {
                             onClick={() => setIsImagePopoverOpen(!isImagePopoverOpen)}
                             className='bg-gray-100 hover:bg-gray-200 active:bg-gray-100 transition-colors rounded-md w-[30px] box-border p-1 cursor-pointer'
                         >
-                            <img className='w-full' src={image_search} alt="" />
+                            <img className='w-full' src={images.image_search} alt="" />
                         </div>
                     </Popover>
                 </div>
@@ -114,7 +108,7 @@ const Header = () => {
 
             <div className='flex items-center gap-8'>
                 <div className='bg-gray-50 hover:bg-gray-100 active:bg-gray-50 transition-colors rounded-md w-[40px] box-border p-2 shadow shadow-gray-500 cursor-pointer'>
-                    <img className='w-full' src={save} alt='' />
+                    <img className='w-full' src={images.save} alt='' />
                 </div>
                 <Popover
                     isOpen={isNotificationPopoverOpen}
@@ -153,12 +147,12 @@ const Header = () => {
                     <div className='relative bg-gray-50 hover:bg-gray-200 active:bg-gray-50 transition-colors rounded-md w-[40px] box-border p-2 shadow shadow-gray-500 cursor-pointer'
                         onClick={() => setIsNotificationPopoverOpen(!isNotificationPopoverOpen)}
                     >
-                        <img src={bell} className='w-full' alt='' />
+                        <img src={images.bell} className='w-full' alt='' />
                         <div className='w-3 aspect-square bg-red-600 absolute -top-1 -right-1 rounded-full'></div>
                     </div>
                 </Popover>
                 <div className='bg-gray-50 hover:bg-gray-200 active:bg-gray-50 transition-colors rounded-md w-[40px] box-border p-2 shadow shadow-gray-500 cursor-pointer'>
-                    <img className='w-full' src={gift} alt='' />
+                    <img className='w-full' src={images.gift} alt='' />
                 </div>
             </div>
         </div>

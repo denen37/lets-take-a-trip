@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\assets",
+    "\\src\\components\\Home",
+    "\\src\\features\\login",
+    "\\src\\features\\signup"
+  ],
+  "SelectedNode": "\\src\\assets\\icon.js",
+  "PreviewInSolutionExplorer": false
+}

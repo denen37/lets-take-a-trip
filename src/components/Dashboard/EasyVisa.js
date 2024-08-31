@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import like from '../../assets/icons/like.png'
-import save from '../../assets/icons/save.png'
-import location_white from '../../assets/icons/location (2).png'
+import { images } from '../../assets/resources'
 import { useImmer } from 'use-immer'
 const rootPath = 'http://localhost:3000'
 
@@ -32,14 +30,14 @@ const EasyVisa = ({ destination }) => {
                 style={{ backgroundImage: `url(${currentCity.imagePath})` }}>
                 <div className='flex items-center gap-4 p-1 rounded-full absolute right-4 top-4' style={{ backgroundColor: 'rgba(182, 162, 179, 0.3)' }}>
                     <div className='flex'>
-                        <img src={like} alt='' className='w-8 aspect-square rounded-full object-cover bg-white p-1 z-10' />
+                        <img src={images.like} alt='' className='w-8 aspect-square rounded-full object-cover bg-white p-1 z-10' />
                         <div className='flex items-center pl-10 pr-4 py-1 -ml-8 bg-[#b6a2b3] rounded-full'>
                             <p className='text-white'>92</p>
                         </div>
                     </div>
 
                     <div className='flex'>
-                        <img src={save} alt='ss' className='w-8 aspect-square rounded-full object-cover bg-white p-1 z-10' />
+                        <img src={images.save} alt='ss' className='w-8 aspect-square rounded-full object-cover bg-white p-1 z-10' />
                         <div className='flex items-center pl-10 pr-4 py-1 -ml-8 bg-[#b6a2b3] rounded-full'>
                             <p className='text-white'>58</p>
                         </div>
@@ -49,7 +47,7 @@ const EasyVisa = ({ destination }) => {
                     {
                         location.places.map((place, index) => {
                             if (!place.current) {
-                                return <img key={index} src={place.imagePath} alt='' className='w-[80px] aspect-square border-[4px] border-[#b6a2b3] rounded-2xl object-cover cursor-pointer'
+                                return <img key={index} src={images.place.imagePath} alt='' className='w-[80px] aspect-square border-[4px] border-[#b6a2b3] rounded-2xl object-cover cursor-pointer'
                                     onClick={() => handlePlaceImageClick(place.name)}
                                 />
                             }
@@ -61,7 +59,7 @@ const EasyVisa = ({ destination }) => {
                     <div className='flex flex-col gap-2'>
                         <h2 className='text-white text-2xl font-[500]'>{getCurrentCity().name}</h2>
                         <div className='flex gap-1 items-center'>
-                            <img src={location_white} alt="" className='w-8 -ml-[6px]' />
+                            <img src={images.location_white} alt="" className='w-8 -ml-[6px]' />
                             <p className='text-white'>{location.country}</p>
                         </div>
                     </div>

@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import pointer from '../../assets/icons/Asset 5logos.png'
-import star from '../../assets/icons/Asset 6logos.png'
+import React, { useState } from 'react';
 import EasyVisa from './EasyVisa'
 import CityCard from './CityCard'
 import { easyVisaObj, filtersObj } from '../../data/places'
@@ -29,7 +27,7 @@ const Middle = () => {
                 <div className='mt-6'>
                     <div className='flex items-center gap-3'>
                         <div className='w-16'>
-                            <img className='w-full' src={pointer} alt='' />
+                            <img className='w-full' src={images.bubble} alt='' />
                         </div>
                         <h1 className='text-3xl font-semibold'>Hello, John!</h1>
 
@@ -45,7 +43,7 @@ const Middle = () => {
             <div className=''>
                 <div className='flex gap-2 items-center mt-6 mb-4'>
                     <h1 className='text-2xl font-[500]'>Easy Visa Destinations</h1>
-                    <img src={star} alt='' className='w-7' />
+                    <img src={images.star} alt='' className='w-7' />
                 </div>
                 <div className='grid grid-cols-2 gap-3 mt-1'>
                     {

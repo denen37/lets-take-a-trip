@@ -1,12 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FloatingLabelInputLine } from '../Shared/Inputs'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FloatingLabelInputLine } from '../../components/Shared/Inputs'
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
-import google from '../../assets/icons/google.png'
-import facebook from '../../assets/icons/facebook.png'
-import logo from '../../assets/images/Let’s_take _a _trip _logo.png'
-import flying_plane from '../../assets/icons/flying_plane.png'
+import { images } from '../../assets/resources'
 
 const SignUp = () => {
     const bg = '/images/Home/beautiful-ocean-pictures.jpg'
@@ -19,7 +15,7 @@ const SignUp = () => {
                     <Link className='border border-orange-600 font-bold text-orange-600 bg-transparent mt-6 py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-orange-600 hover:text-white'
                         to={'/login'}
                     >Login</Link>
-                    <img src={flying_plane} alt='' className='w-[70px] absolute bottom-4 -right-4' />
+                    <img src={images.flying_plane} alt='' className='w-[70px] absolute bottom-4 -right-4' />
                 </div>
             </div>
 
@@ -47,19 +43,19 @@ const SignUp = () => {
 
                 <div className='flex items-center justify-between gap-2 mt-6'>
                     <button className='flex items-center gap-2 text-orange-600 text-[12px] bg-white p-2 rounded-lg'>
-                        <img src={google} alt='' className='w-[20px]' />
+                        <img src={images.google} alt='' className='w-[20px]' />
                         <span>Continue with google</span>
                     </button>
 
                     <button className='flex items-center gap-2 text-orange-600 text-[12px] bg-white p-2 rounded-lg'>
-                        <img src={facebook} alt='' className='w-[20px]' />
+                        <img src={images.facebook} alt='' className='w-[20px]' />
                         <span>Continue with Facebook</span>
                     </button>
                 </div>
             </form>
 
             <Link className='h-[100px] py-4 ps-2 pe-6 bg-white absolute top-5 left-0 rounded-e-full ' to={'/'}>
-                <img src={logo} alt='' className='h-full' />
+                <img src={images.logo} alt='' className='h-full' />
             </Link>
         </div>
     )

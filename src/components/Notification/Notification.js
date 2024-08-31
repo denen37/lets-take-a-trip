@@ -2,11 +2,11 @@ import { faAngleUp, faCaretDown, faEllipsisVertical, faRotateRight, } from '@for
 import { faSquare, faSquareCheck, faFolder, faStar, faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState, useReducer, useEffect } from 'react'
-import no_message from '../../assets/icons/funny-messages.png'
 import NewsItem from './NewsItem'
 import NewsPreview from './NewsPreview'
 import { newsObj } from '../../data/news'
 import { useImmer } from 'use-immer'
+import { images } from '../../assets/resources';
 import NotificationOptions from './NotificationOptions'
 import FilterOptions from './FilterOptions';
 
@@ -119,7 +119,7 @@ const Notification = () => {
         return (
             <div className='bg-white h-full text-gray-400 flex items-center justify-center'>
                 <div className='flex flex-col gap-2 items-center'>
-                    <img src={no_message} alt='' className='w-[80px]' />
+                    <img src={images.no_message} alt='' className='w-[80px]' />
                     <p className=''>No message selected</p>
                 </div>
             </div>
