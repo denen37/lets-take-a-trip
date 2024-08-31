@@ -13,9 +13,10 @@ import MyAccount from './components/MyAccount/MyAccount';
 import L_Middle from './components/Learning/L_Middle';
 import VideoLibrary from './components/Learning/VideoLibrary'
 import HowToLetsTakeAtrip from './components/Learning/HowToLetsTakeAtrip'
-import Login from './components/Onboarding/Login';
-import SignUp from './components/Onboarding/SignUp';
+import Login from './components/Auth/Login';
+import SignUp from './components/Auth/SignUp';
 import DashboardContainer from './components/Dashboard/DashboardContainer';
+import ForgotPassword from './components/Auth/ForgotPassword';
 // register Swiper custom elements
 register();
 
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/forgot_password' element={<ForgotPassword />} />
           <Route path="/dashboard" element={<DashboardContainer />} >
             <Route index element={<Dashboard />} />
             <Route path="account" element={<MyAccount />} />

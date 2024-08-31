@@ -53,7 +53,7 @@ const Index = () => {
                 <div className='flex items-center gap-10'>
                     <div className='flex items-center gap-4'>
                         <Link className='rounded-full py-1 px-4 border border-orange-600 text-orange-600 transition-colors duration-300 hover:bg-orange-600 hover:text-white' to={'/signup'} >Register</Link>
-                        <Link className='rounded-full py-1 px-4 bg-orange-600 text-white  transition-colors duration-300 hover:bg-transparent hover:text-orange-600' to={'/login'}>Sign In</Link>
+                        <Link className='rounded-full py-1 px-4 border border-orange-600 bg-orange-600 text-white  transition-colors duration-300 hover:bg-transparent hover:text-orange-600' to={'/login'}>Sign In</Link>
                     </div>
                     <div className='bg-orange-600 rounded-full p-1.5'>
                         <img src={dashboard_light} alt='' className='w-[25px]' />

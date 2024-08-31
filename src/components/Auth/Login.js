@@ -47,7 +47,7 @@ const Login = () => {
                 <button className='w-full py-2 text-white text-xl font-bold bg-orange-600 border border-orange-600 rounded-lg mt-6 transition-colors duration-300 hover:bg-transparent hover:text-orange-600'
                     onClick={handleClick}
                 >Log In</button>
-                <Link className='mt-4 text-sm py-1 px-10 rounded-lg font-light text-gray-600 bg-gray-300'>Forgot Password?</Link>
+                <Link className='mt-4 text-sm py-1 px-10 rounded-lg font-light text-gray-600 bg-gray-300' to={'/forgot_password'}>Forgot Password?</Link>
 
                 <div className='w-full flex items-center gap-4 px-2 mt-8'>
                     <div className='flex-1 h-1 bg-black'></div>
