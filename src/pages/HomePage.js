@@ -1,6 +1,8 @@
 import React from 'react'
 import { images } from '../assets/resources'
 import { Link } from 'react-router-dom'
+import LibraryPopover from '../components/Home/LibraryPopover'
+
 
 const cardBtns = [
     {}
@@ -8,21 +10,23 @@ const cardBtns = [
 
 const HomePage = () => {
 
-    const CardButton = ({ image, name }) => {
+    const CardButton = ({ image, name, link }) => {
         return (
-            <div className='flex flex-col items-center gap-3 px-4 pt-3 pb-2 rounded-lg cursor-pointer '>
-                <div className='p-3 aspect-square rounded-full transition-colors duration-300'>
+            <Link className='group flex flex-col items-center gap-3 hover:shadow-[0px_5px_20px_rgba(0,0,0,0.35)] px-4 pt-3 pb-2 rounded-lg cursor-pointer transition-shadow duration-300'
+                to={link}
+            >
+                <div className='p-3 group-hover:bg-orange-600 aspect-square rounded-full transition-colors duration-300'>
                     <img src={image} alt='' className='w-[30px]' />
                 </div>
                 <p className='text-gray-500'>{name}</p>
-            </div>
+            </Link>
         )
     }
 
     return (
         <div className='grid grid-cols-[1fr_40vw] relative h-screen'>
             <div className='h-full rounded-e-3xl relative flex items-center'
-                style={{ backgroundImage: 'url(/images/Home/UK_image.webp)' }}>
+                style={{ backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/Home/UK_image.webp)' }}>
                 <div className='max-w-[300px] ms-auto px-6 me-10 mt-10'>
                     <h1 className='text-6xl font-bold text-white'>Life is a journey.</h1>
                     <div className='w-[20%] h-0.5 bg-white my-2'></div>
@@ -45,22 +49,16 @@ const HomePage = () => {
                         <Link className='rounded-full py-1 px-4 border border-orange-600 text-orange-600 transition-colors duration-300 hover:bg-orange-600 hover:text-white' to={'/signup'} >Register</Link>
                         <Link className='rounded-full py-1 px-4 border border-orange-600 bg-orange-600 text-white  transition-colors duration-300 hover:bg-transparent hover:text-orange-600' to={'/login'}>Sign In</Link>
                     </div>
-                    <div className='bg-orange-600 rounded-full p-1.5'>
-                        <img src={images.dashboard_light} alt='' className='w-[25px]' />
-                    </div>
+                    <LibraryPopover />
                 </div>
 
                 <div className='flex flex-col items-center gap-6'>
                     <h1 className='text-2xl'>What You're Looking For?</h1>
                     <div className='flex items-center justify-between mt-4'>
-                        <div className='flex flex-col items-center gap-3 shadow-[0px_5px_20px_rgba(0,0,0,0.35)] px-4 pt-3 pb-2 rounded-lg cursor-pointer'>
-                            <div className='p-3 bg-orange-600 aspect-square rounded-full'>
-                                <img src={images.hotel_light} alt='' className='w-[30px]' />
-                            </div>
-                            <p className='text-gray-500'>Hotels</p>
-                        </div>
+
+                        <CardButton image={images.hotel_gray} name='Hotels' />
                         <CardButton image={images.trip} name='Trips' />
-                        <CardButton image={images.visa} name='VISA' />
+                        <CardButton image={images.visa} name='VISA' link="/visa" />
                         <CardButton image={images.airplane} name='Tour' />
                     </div>
 

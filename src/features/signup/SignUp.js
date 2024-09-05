@@ -2,10 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FloatingLabelInputLine } from '../../components/Shared/Inputs'
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { useImmer } from 'use-immer'
 import { images } from '../../assets/resources'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
+    const [username, setUsername] = useImmer('')
+    const [password, setPassword] = useImmer('')
+    const [email, setEmail] = useImmer('')
     const bg = '/images/Home/beautiful-ocean-pictures.jpg'
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        if (username && password && email) {
+            navigate('/predashboard');
+        }
+    }
+
+
     return (
         <div className='flex items-center min-h-screen bg-cover bg-no-repeat bg-center relative' style={{ backgroundImage: `url(${bg})` }}>
             <div className='h-[400px] w-[70%] px-20 ms-auto flex justify-end items-center rounded-s-[30px] bg-white bg-opacity-80 '>
@@ -24,16 +39,20 @@ const SignUp = () => {
 
 
                 <div className='flex flex-col gap-6 mt-6 w-full'>
-                    <FloatingLabelInputLine label={'User name'} icon={faUser} />
+                    <FloatingLabelInputLine label={'User name'} icon={faUser} onChange={(e) => { setUsername(e.target.value) }} value={username} />
 
-                    <FloatingLabelInputLine label={'Email'} icon={faEnvelope} />
+                    <FloatingLabelInputLine label={'Email'} type={'email'} icon={faEnvelope} onChange={(e) => { setEmail(e.target.value) }} value={email} />
 
-                    <FloatingLabelInputLine label={'Password'} icon={faLock} />
+                    <FloatingLabelInputLine label={'Password'} type={'password'} icon={faLock} onChange={(e) => { setPassword(e.target.value) }} value={password} />
                 </div>
 
                 <p className='mt-6'>By continuing to agree to <span className='text-orange-600 cursor-pointer'>Terms of services</span> and <span className='text-orange-600 cursor-pointer'>Privacy policy</span></p>
 
-                <button className='w-full py-2 text-white text-xl font-bold bg-orange-600 border border-orange-600 rounded-lg mt-6 transition-colors duration-300 hover:bg-transparent hover:text-orange-600'>Create Account</button>
+                <button className='w-full py-2 text-white text-xl font-bold bg-orange-600 border border-orange-600 rounded-lg mt-6 transition-colors duration-300 hover:bg-transparent hover:text-orange-600'
+                    onClick={handleClick}
+                >
+                    Create Account
+                </button>
 
                 <div className='w-full flex items-center gap-4 px-2 mt-8'>
                     <div className='flex-1 h-1 bg-black'></div>

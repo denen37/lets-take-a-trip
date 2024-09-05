@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useImmer } from 'use-immer'
 import { useNavigate } from 'react-router-dom'
 import { images } from '../../assets/resources'
@@ -10,25 +10,37 @@ const buttonsInit = [
         name: 'Dashboard', icon: function () { return this.hover ? images.dashboard_light : images.dashboard_gray },
         active: true, hasOptions: false, hover: false, component: function () {
             return null;
-        }
+        },
+        onClick: function () {
+            return null;
+        },
     },
     {
         name: 'Hotel', icon: function () { return this.hover ? images.hotel_light : images.hotel_gray },
         active: false, hasOptions: false, hover: false, component: function () {
             return null;
-        }
+        },
+        onClick: function () {
+            return null;
+        },
     },
     {
         name: 'My VISA', icon: function () { return this.hover ? images.passport_light : images.passport_gray },
         active: false, hasOptions: false, hover: false, component: function () {
             return null;
-        }
+        },
+        onClick: function () {
+            return null;
+        },
     },
     {
         name: 'Inbox', icon: function () { return this.hover ? images.inbox_light : images.inbox_gray },
         active: false, hasOptions: true, options: [], hover: false, component: function () {
             return null;
-        }
+        },
+        onClick: function () {
+            return null;
+        },
     }
 ]
 
@@ -44,12 +56,23 @@ const Sidebar = () => {
         });
     }
 
+    // const handleVisaClick = () => {
+    //     console.log('visa clicked')
+    // }
+
+    // useEffect(() => {
+    //     setButton(btnList => {
+    //         btnList[2].onClick = handleVisaClick;
+    //     })
+    // })
+
     const getButton = (button, index) => {
         return <button key={index} className='group px-5 py-[6px] w-full flex items-center justify-between transition-colors rounded-lg'
             onMouseEnter={() => handleButtonHover(index, true)}
             onMouseLeave={() => handleButtonHover(index, false)}
             style={button.active || button.hover ? { backgroundColor: '#FF6600', color: '#ffffff' } :
                 { backgroundColor: '#eeefef', color: '#8c8e91' }}
+            onClick={button.onClick}
         >
             <div className='flex items-center gap-2'>
                 <img src={button.icon()} alt='' className='w-[30px]' />

@@ -18,6 +18,7 @@ const Login = () => {
     }
 
     const bg = '/images/Home/beautiful-ocean-pictures.jpg'
+
     return (
         <div className='flex items-center min-h-screen bg-cover bg-no-repeat bg-center relative' style={{ backgroundImage: `url(${bg})` }}>
             <div className='h-[400px] w-[70%] px-20 ms-auto flex justify-end items-center rounded-s-[30px] bg-white bg-opacity-80 '>

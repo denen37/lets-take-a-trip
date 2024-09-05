@@ -3,9 +3,14 @@ import EasyVisa from './EasyVisa'
 import CityCard from './CityCard'
 import { easyVisaObj, filtersObj } from '../../data/places'
 import { useImmer } from 'use-immer'
+import { images } from '../../assets/resources';
+import { useSelector } from 'react-redux';
+
+
 
 const Middle = () => {
-    const [easyVisa, setEasyVisa] = useState(easyVisaObj)
+    const easyVisas = useSelector(state => state.easyVisa.data)
+
     const [filters, setFilters] = useImmer(filtersObj)
     const [currentBtn, setCurrentBtn] = useState(filters[0].type);
 
@@ -30,7 +35,6 @@ const Middle = () => {
                             <img className='w-full' src={images.bubble} alt='' />
                         </div>
                         <h1 className='text-3xl font-semibold'>Hello, John!</h1>
-
                     </div>
                     <div>
                         <p className='text-base text-[#848588] font-light'>
@@ -47,7 +51,7 @@ const Middle = () => {
                 </div>
                 <div className='grid grid-cols-2 gap-3 mt-1'>
                     {
-                        easyVisa.map((place, index) => <EasyVisa key={index} destination={place} />)
+                        easyVisas.map((place, index) => <EasyVisa key={index} destination={place} />)
                     }
                 </div>
             </div>

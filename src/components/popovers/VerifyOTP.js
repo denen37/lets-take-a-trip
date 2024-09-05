@@ -3,6 +3,7 @@ import { useImmer } from 'use-immer';
 
 const VerifyOTP = ({ header, headerColor, validateOTP }) => {
     const [isValidOTP, setIsValidOTP] = useState(false)
+    const [focusIndex, setFocusIndex] = useState(0);
     const [digits, setDigits] = useImmer(['', '', '', '', '', ''])
     const inputRefs = useRef([]);
 
@@ -18,7 +19,7 @@ const VerifyOTP = ({ header, headerColor, validateOTP }) => {
 
         if (index < digits.length - 1) {
             //console.log('focus')
-            inputRefs.current[index + 1].focus();
+            setFocusIndex(index + 1);
         }
 
     }
@@ -26,7 +27,7 @@ const VerifyOTP = ({ header, headerColor, validateOTP }) => {
     const handleKeydown = (e, index) => {
 
         if (e.key === 'Backspace' && !digits[index] && index > 0) {
-            inputRefs.current[index - 1].focus();
+            setFocusIndex(index - 1);
         }
     }
 
@@ -34,6 +35,7 @@ const VerifyOTP = ({ header, headerColor, validateOTP }) => {
         return (
             <input type='text' className='border border-gray-300 rounded-lg p-1 text-center text-xl outline-none focus:border-[#ff6600]'
                 value={value}
+                autoFocus={index === focusIndex}
                 maxLength={'1'}
                 pattern={'^[0-9]*$'}
                 ref={el => (inputRefs.current[index] = el)}

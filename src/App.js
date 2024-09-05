@@ -15,6 +15,8 @@ import Login from './features/login/Login';
 import SignUp from './features/signup/SignUp';
 import DashboardContainer from './components/Dashboard/DashboardContainer';
 import ForgotPassword from './components/Auth/ForgotPassword';
+import PreDashboard from './components/Dashboard/PreDashboard';
+import VisaApplicationPage from './components/Visa/VisaApplicationPage';
 
 // register Swiper custom elements
 register();
@@ -28,6 +30,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path='/forgot_password' element={<ForgotPassword />} />
+          <Route path='/visa' element={<VisaApplicationPage />} />
+          <Route path='predashboard' element={<PreDashboard />} />
           <Route path="/dashboard" element={<DashboardContainer />} >
             <Route index element={<Dashboard />} />
             <Route path="account" element={<MyAccount />} />

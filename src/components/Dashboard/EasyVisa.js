@@ -47,7 +47,7 @@ const EasyVisa = ({ destination }) => {
                     {
                         location.places.map((place, index) => {
                             if (!place.current) {
-                                return <img key={index} src={images.place.imagePath} alt='' className='w-[80px] aspect-square border-[4px] border-[#b6a2b3] rounded-2xl object-cover cursor-pointer'
+                                return <img key={index} src={place.imagePath} alt='' className='w-[80px] aspect-square border-[4px] border-[#b6a2b3] rounded-2xl object-cover cursor-pointer'
                                     onClick={() => handlePlaceImageClick(place.name)}
                                 />
                             }

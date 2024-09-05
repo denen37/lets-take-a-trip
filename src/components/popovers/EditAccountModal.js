@@ -3,37 +3,38 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { TextInput, SelectInput, SelectCountryInput } from '../Shared/Inputs';
 import VerifyOTP from './VerifyOTP';
-import country_and_states from '../../data/country-states';
+import { countryList, statesList } from '../../utils/countryList';
 
 
 
 const EditAccountModal = ({ trigger }) => {
     const [isValidOTP, setIsValidOTP] = useState(false);
     const [countries, setCountries] = useState([]);
+    const [states, setStates] = useState([]);
+    const [selectedState, setSelectedState] = useState(null);
+    const [selectedCountry, setSelectedCountry] = useState('');
 
     const validateOTP = (state) => {
         setIsValidOTP(state);
     }
 
-    const getCountries = () => {
-        let countries = Object.entries(country_and_states.country).map((item, index) => {
-            return {
-                value: item[0],
-                label: item[1]
-            }
-        });
-
-        return countries
-    }
-
     useEffect(() => {
-        setCountries(getCountries());
+        setCountries(countryList());
         //getCountries().map(item => item.country)
     }, [])
 
+    const handleCountrySelectionChanged = (newValue) => {
+        setSelectedCountry(newValue.value);
+    }
+
+    const handleStateSelectionChanged = (newValue) => {
+        setSelectedState(newValue);
+        console.log(newValue)
+    }
+
     useEffect(() => {
-        console.log(countries)
-    }, [countries])
+        setStates(statesList(selectedCountry) ?? []);
+    }, [selectedCountry])
 
     return (
         <Popup trigger={trigger} modal
@@ -51,9 +52,8 @@ const EditAccountModal = ({ trigger }) => {
                             <TextInput label={'Name'} placeholder={'Enter your name'} />
                             <SelectInput label={'Gender'} options={['Male', 'Female']} />
                             <TextInput label={'Address'} placeholder={'Enter your address'} />
-                            {/* <SelectInput label={'Country'} options={countries} /> */}
-                            <SelectCountryInput label={'Country'} options={countries} />
-                            <SelectInput label={'State'} options={['Abuja', 'Benue']} />
+                            <SelectCountryInput label={'Country'} options={countries} onChange={handleCountrySelectionChanged} />
+                            <SelectCountryInput label={'State'} options={states} onChange={handleStateSelectionChanged} />
                             <TextInput label={'Zip/Postal code'} placeholder={'Enter your zip/postal code'} />
 
                             <button className='bg-[#ff6600] text-white py-2  font-light w-full rounded-lg'>Save Changes</button>

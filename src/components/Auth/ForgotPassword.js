@@ -1,18 +1,22 @@
 import { faArrowLeft, faCancel, faCross, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const ForgotPassword = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='pt-5 h-screen flex flex-col items-center justify-between'>
             <div className='flex items-center justify-between w-4/5 px-6 py-2 shadow-xl'>
-                <Link className='h-fit aspect-square rounded border-2 border-black p-1'>
+                <button className='h-fit aspect-square rounded border-2 border-black p-1'
+                    onClick={() => navigate(-1)}
+                >
                     <FontAwesomeIcon icon={faArrowLeft} />
-                </Link>
-                <Link>
+                </button>
+                <button>
                     <FontAwesomeIcon icon={faTimes} size='2xl' color='#ff6600' />
-                </Link>
+                </button>
             </div>
             <div className='bg-gray-300 rounded-2xl px-4 py-5 w-1/3 max-w-[350px]'>
                 <div className='flex justify-end w-full'>
