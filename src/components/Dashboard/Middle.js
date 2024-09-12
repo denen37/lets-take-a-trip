@@ -3,28 +3,22 @@ import EasyVisa from './EasyVisa'
 import CityCard from './CityCard'
 import { easyVisaObj, filtersObj } from '../../data/places'
 import { useImmer } from 'use-immer'
+import { activate } from '../../features/places/taggedPlacesSlice';
 import { images } from '../../assets/resources';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 const Middle = () => {
-    const easyVisas = useSelector(state => state.easyVisa.data)
+    const easyVisas = useSelector(state => state.easyVisas.data);
+    const taggedPlaces = useSelector(state => state.taggedPlaces);
 
-    const [filters, setFilters] = useImmer(filtersObj)
-    const [currentBtn, setCurrentBtn] = useState(filters[0].type);
+    const dispatch = useDispatch();
+    const [currentBtn, setCurrentBtn] = useState(taggedPlaces.data[0].type);
 
     function handleFilterClick(text) {
         setCurrentBtn(text);
-        setFilters(filters => {
-            filters.forEach(filter => {
-                if (filter.type == text) {
-                    filter.current = true
-                } else {
-                    filter.current = false
-                }
-            })
-        })
+        dispatch(activate(text));
     }
     return (
         <div className='flex-1 flex flex-col px-4'>
@@ -58,7 +52,7 @@ const Middle = () => {
             <div className='mt-10 flex flex-col flex-1'>
                 <div className='flex gap-10 text-base'>
                     {
-                        filters.map(filter => filter.type).map(text => <button className='font-[500]'
+                        taggedPlaces.data.map(filter => filter.type).map(text => <button className='font-[500]'
                             style={{ color: currentBtn == text ? '#FF6600' : '#848588' }}
                             onClick={() => handleFilterClick(text)}
                         >{text}</button>)
@@ -66,7 +60,7 @@ const Middle = () => {
                 </div>
                 <div className='grid flex-1 grid-cols-2 mt-4 gap-x-6 gap-y-4'>
                     {
-                        filters.find(filter => filter.current).places.map(place => <CityCard city={place} />)
+                        taggedPlaces.data.find(filter => filter.current).places.map(place => <CityCard city={place} />)
                     }
                 </div>
             </div>

@@ -17,6 +17,7 @@ import DashboardContainer from './components/Dashboard/DashboardContainer';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import PreDashboard from './components/Dashboard/PreDashboard';
 import VisaApplicationPage from './components/Visa/VisaApplicationPage';
+import Logout from './components/Dashboard/Logout';
 
 // register Swiper custom elements
 register();
@@ -24,10 +25,11 @@ register();
 export default function App() {
   return (
     <CustomProvider theme='light'>
-      <div className='min-h-screen'>
+      <div className='min-h-screen bg-[#F7F7F7]'>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path='/forgot_password' element={<ForgotPassword />} />
           <Route path='/visa' element={<VisaApplicationPage />} />

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { easyVisaObj } from "../../data/places";
+import { taggedPlaces } from "../../data/places";
 
 export const fetchAllTodos = createAsyncThunk(
     'todos/fetchAllTodos', async () => {
@@ -18,17 +18,27 @@ export const addTodo = createAsyncThunk(
 
 
 let initialState = {
-    data: easyVisaObj,
+    data: taggedPlaces,
     status: 'idle',
     error: []
 }
 
-const easyVisaSlice = createSlice({
-    name: 'easyVisa',
+const taggedPlacesSlice = createSlice({
+    name: 'taggedPlaces',
     initialState,
     reducers: {
-
+        activate: (state, action) => {
+            state.data.forEach(place => {
+                if (place.type == action.payload)
+                    place.current = true
+                else
+                    place.current = false
+            })
+        }
     },
+
+
+
     // extraReducers: (builder) => {
     //     builder.addCase(fetchAllTodos.pending, (state, action) => {
     //         state.status = 'loading'
@@ -56,6 +66,6 @@ const easyVisaSlice = createSlice({
     // }
 })
 
-export const { } = easyVisaSlice.actions
+export const { activate } = taggedPlacesSlice.actions
 
-export default easyVisaSlice.reducer
+export default taggedPlacesSlice.reducer 

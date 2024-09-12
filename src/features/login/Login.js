@@ -25,7 +25,10 @@ const Login = () => {
                 <div className='flex flex-col justify-center items-center relative'>
                     <h1 className='text-2xl font-bold'>Not yet taking a trip?</h1>
                     <p className='text-base'>Let's take a trip now!</p>
-                    <Link className='border border-orange-600 font-bold text-orange-600 bg-transparent mt-6 py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-orange-600 hover:text-white'>Sign Up</Link>
+                    <Link className='border border-orange-600 font-bold text-orange-600 bg-transparent mt-6 py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-orange-600 hover:text-white'
+                        to={'/signup'}>
+                        Sign Up
+                    </Link>
                     <img src={images.flying_plane} alt='' className='w-[70px] absolute bottom-4 -right-4' />
                 </div>
             </div>

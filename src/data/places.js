@@ -15,7 +15,7 @@ const easyVisaObj = [{
 }
 ]
 
-const filtersObj = [
+const taggedPlaces = [
     {
         type: 'Most Popular',
         current: true,
@@ -55,4 +55,4 @@ const recentActivities = [
     { name: 'Kigali', country: 'Rwanda', imagePath: '/images/Places/Rwanda/Kigali/Kigali-Rwanda.jpeg', date: '20, Feb, 2024', isApplied: true },
 ]
 
-export { easyVisaObj, filtersObj, recentActivities }
+export { easyVisaObj, taggedPlaces, recentActivities }
