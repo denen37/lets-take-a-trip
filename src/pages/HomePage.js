@@ -107,8 +107,8 @@ const HomePage = () => {
                 </div>
             </BrowserView>
             <MobileView>
-                <div>
-                    <div className='flex items-center justify-between px-4 py-4'>
+                <div className='px-6'>
+                    <div className='flex items-center justify-between py-4'>
                         <Link to={'/'} className='w-[70px]'>
                             <img src={images.logo} className='w-full' />
                         </Link>
@@ -134,9 +134,9 @@ const HomePage = () => {
                         <img src={images.plane_takeoff} alt='' className='absolute w-[100px] right-0 top-10' />
                     </div>
 
-                    <div className='flex flex-col items-center gap-3'>
-                        <h1 className='text-2xl py-4'>What You're Looking For?</h1>
-                        <div className='flex items-center justify-between mt-4 px-1'>
+                    <div className='flex flex-col items-center mt-6 gap-3'>
+                        <h1 className='text-2xl'>What You're Looking For?</h1>
+                        <div className='flex items-center justify-between px-1'>
                             <CardButton image={images.hotel_gray} name='Hotels' />
                             <CardButton image={images.trip} name='Trips' />
                             <CardButton image={images.visa} name='VISA' link="/visa" />
