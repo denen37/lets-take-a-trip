@@ -49,6 +49,7 @@ const images = {
     loading: require('./icons/loading.png'),
     location: require('./icons/location.png'),
     calendar: require('./icons/calendar.png'),
+    airplane_loading_gif: require('./images/Airplane_loading.gif'),
 }
 
 

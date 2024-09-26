@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EasyVisa from './EasyVisa'
 import CityCard from './CityCard'
 import { easyVisaObj, filtersObj } from '../../data/places'
@@ -6,12 +6,17 @@ import { useImmer } from 'use-immer'
 import { activate } from '../../features/places/taggedPlacesSlice';
 import { images } from '../../assets/resources';
 import { useSelector, useDispatch } from 'react-redux';
+import { fetchAllEasyVisas } from '../../features/places/easyVisaSlice';
 
 
 
 const Middle = () => {
     const easyVisas = useSelector(state => state.easyVisas.data);
+    // const easyVisaStatus = useSelector(state => state.easyVisas.status)
+    // const easyVisaError = useSelector(state => state.easyVisas.error)
+
     const taggedPlaces = useSelector(state => state.taggedPlaces);
+
 
     const dispatch = useDispatch();
     const [currentBtn, setCurrentBtn] = useState(taggedPlaces.data[0].type);
@@ -20,9 +25,13 @@ const Middle = () => {
         setCurrentBtn(text);
         dispatch(activate(text));
     }
+
+    // useEffect(() => {
+    // }, [easyVisas])
+
     return (
         <div className='flex-1 flex flex-col px-4'>
-            <div className='grid grid-cols-2 gap-3'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
                 <div className='mt-6'>
                     <div className='flex items-center gap-3'>
                         <div className='w-16'>
@@ -43,7 +52,7 @@ const Middle = () => {
                     <h1 className='text-2xl font-[500]'>Easy Visa Destinations</h1>
                     <img src={images.star} alt='' className='w-7' />
                 </div>
-                <div className='grid grid-cols-2 gap-3 mt-1'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1'>
                     {
                         easyVisas.map((place, index) => <EasyVisa key={index} destination={place} />)
                     }
@@ -58,13 +67,14 @@ const Middle = () => {
                         >{text}</button>)
                     }
                 </div>
-                <div className='grid flex-1 grid-cols-2 mt-4 gap-x-6 gap-y-4'>
+                <div className='grid flex-1 grid-cols-1 sm:grid-cols-2 mt-4 gap-x-6 gap-y-4'>
                     {
                         taggedPlaces.data.find(filter => filter.current).places.map(place => <CityCard city={place} />)
                     }
                 </div>
             </div>
         </div>
+
     )
 }
 

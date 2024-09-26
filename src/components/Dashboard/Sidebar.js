@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useImmer } from 'use-immer'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { images } from '../../assets/resources'
 import SidebarMorePopover from '../popovers/SidebarMorePopover'
 import AccountSettingsPopover from '../popovers/AccountSettingsPopover'
@@ -11,42 +11,35 @@ const buttonsInit = [
         active: true, hasOptions: false, hover: false, component: function () {
             return null;
         },
-        onClick: function () {
-            return null;
-        },
+        link: '/dashboard'
     },
     {
         name: 'Hotel', icon: function () { return this.hover ? images.hotel_light : images.hotel_gray },
         active: false, hasOptions: false, hover: false, component: function () {
             return null;
         },
-        onClick: function () {
-            return null;
-        },
+        link: '/hotels'
     },
     {
         name: 'My VISA', icon: function () { return this.hover ? images.passport_light : images.passport_gray },
         active: false, hasOptions: false, hover: false, component: function () {
             return null;
         },
-        onClick: function () {
-            return null;
-        },
+        link: '/visa'
     },
     {
         name: 'Inbox', icon: function () { return this.hover ? images.inbox_light : images.inbox_gray },
         active: false, hasOptions: true, options: [], hover: false, component: function () {
             return null;
         },
-        onClick: function () {
-            return null;
-        },
+        link: '/notification'
     }
 ]
 
 const Sidebar = () => {
     const [buttons, setButton] = useImmer(buttonsInit)
     const navigate = useNavigate();
+    const buttonRefs = useRef([]);
 
 
 
@@ -55,6 +48,15 @@ const Sidebar = () => {
             btnList[index].hover = state;
         });
     }
+
+    const handleClick = (index, link) => {
+        if (buttonRefs.current[index]) {
+            buttonRefs.current[index].style.backgroundColor = '#FF6600';
+            buttonRefs.current[index].style.color = '#FFF';
+
+            navigate(link);
+        }
+    };
 
     // const handleVisaClick = () => {
     //     console.log('visa clicked')
@@ -72,7 +74,8 @@ const Sidebar = () => {
             onMouseLeave={() => handleButtonHover(index, false)}
             style={button.active || button.hover ? { backgroundColor: '#FF6600', color: '#ffffff' } :
                 { backgroundColor: '#eeefef', color: '#8c8e91' }}
-            onClick={button.onClick}
+            ref={(el) => (buttonRefs.current[index] = el)}
+            onClick={() => handleClick(index, button.link)}
         >
             <div className='flex items-center gap-2'>
                 <img src={button.icon()} alt='' className='w-[30px]' />
@@ -85,7 +88,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className='bg-white mt-0 flex flex-col flex-1 border border-[#c7c8c9] z-[100] shadow-lg shadow-gray-300 fixed top-[15vh] left-0 h-[85vh] w-[250px] overflow-y-scroll'>
+        <div className='w-[250px] hidden md:flex fixed top-[15vh] left-0 h-[85vh] bg-white mt-0 flex-col flex-1 border border-[#c7c8c9] z-[100] shadow-lg shadow-gray-300 overflow-y-scroll'>
             <div className='px-3 pb-5 border-b-2 border-b-[#6c6e70] flex-1'>
                 <div className='flex items-center justify-between mt-10'>
                     <button className='flex items-center gap-[5px] bg-[#fdece2] py-[6px] px-3 rounded-lg hover:opacity-75 active:opacity-100 transition-colors'>

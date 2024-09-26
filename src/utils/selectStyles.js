@@ -21,11 +21,11 @@ const customStyles = {
         padding: "1px 4px",
         border: "1px solid #e5e7eb",
         boxShadow: "none",
-        color: "#e5e7eb"
+        color: "#9ca3af"
     }),
     singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#9ca3af", fontWeight: "300" }),
 
-    placeholder: (defaultStyles) => ({ ...defaultStyles, color: "#e5e7eb", fontWeight: "300" }),
+    placeholder: (defaultStyles) => ({ ...defaultStyles, color: "#9ca3af", fontWeight: "300" }),
 };
 
 const customTheme = (theme) => ({

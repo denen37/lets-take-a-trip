@@ -126,7 +126,7 @@ const Notification = () => {
         )
     }
     return (
-        <div className='bg-[#e5e6e7] h-[120vh] w-[82%] mx-8 mt-5 pt-5 rounded-2xl flex flex-col overflow-hidden'>
+        <div className='bg-[#e5e6e7] h-[120vh] flex-1 mx-8 mt-5 pt-5 rounded-2xl flex flex-col overflow-hidden'>
             <div className='flex items-center gap-3 mb-4 ms-8'>
                 <div className='flex items-center gap-2'>
                     <div className='flex items-center gap-1'>

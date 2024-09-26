@@ -34,7 +34,7 @@ const Aside = () => {
         setHasPrev(true)
     }
     return (
-        <div className='w-full flex-1 bg-[#d5d6d7] p-4 mt-12 rounded-3xl'>
+        <div className='w-[30%] hidden lg:block bg-[#d5d6d7] p-4 mt-12 rounded-3xl'>
             <div className='flex flex-col items-center gap-4 px-4 py-6 bg-[#f0f1f1] rounded-3xl'>
                 <h1 className='text-xl'>Your Profile</h1>
                 <img src={images.user} alt='' className='bg-[#f3d4bf] w-[110px] aspect-square rounded-full mt-3' />

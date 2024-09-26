@@ -24,7 +24,8 @@ const VisaFloatingLabelInput = ({ label, type = "text" }) => {
             <input type={type} id="floating_outlined" class="block px-2.5 pb-1 pt-2.5 w-full text-gray-400 font-light bg-transparent rounded-lg border border-gray-300 focus:border-red-800 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer" placeholder=" "
 
             />
-            <label for="floating_outlined" class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 italic font-light peer-focus:not-italic bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 peer-focus:text-red-800"
+            <label for="floating_outlined"
+                class="absolute text-sm text-gray-400 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 italic font-light peer-focus:not-italic bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 peer-active:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 peer-focus:text-red-800"
             >
                 {label}
             </label>
@@ -33,7 +34,7 @@ const VisaFloatingLabelInput = ({ label, type = "text" }) => {
 }
 
 const VisaRadioInput = ({ label }) => {
-    return <div className='text-gray-300 text-sm font-light'>
+    return <div className='text-gray-400 text-sm font-light'>
         <label className=''>{label}</label>
         <div className='flex gap-4 items-center'>
             <label>
@@ -52,10 +53,12 @@ const VisaRadioInput = ({ label }) => {
 const VisaFloatingLabelTextArea = ({ label, type = "text" }) => {
     return (
         <div class="relative">
-            <textarea type={type} id="floating_outlined" class="block px-2.5 pb-1 pt-2.5 w-full text-gray-400 font-light bg-transparent rounded-lg border border-gray-300 focus:border-red-800 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer resize" placeholder=" "
+            <textarea type={type} id="floating_outlined"
+                class="block px-2.5 pb-1 pt-2.5 w-full text-gray-400 font-light bg-transparent rounded-lg border border-gray-300 focus:border-red-800 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer resize" placeholder=" "
 
             ></textarea>
-            <label for="floating_outlined" class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 italic font-light peer-focus:not-italic bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 peer-focus:text-red-800"
+            <label for="floating_outlined"
+                class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 italic font-light peer-focus:not-italic bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 peer-active:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 peer-focus:text-red-800"
             >
                 {label}
             </label>
@@ -67,12 +70,14 @@ const FloatingLabelInputLine = ({ label, type = 'text', value, icon, inputStyle,
     return (
         <div className='relative'>
             <div class="relative">
-                <input type={type} id="floating_outlined" class="block px-2.5 pb-2 pt-3.5 w-full text-gray-600 font-light bg-transparent border-b-2 border-b-black focus:border-[#FF6600] appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer" placeholder=" "
+                <input type={type} id="floating_outlined"
+                    class="block px-2.5 pb-2 pt-3.5 w-full text-gray-600 font-light bg-transparent border-b-2 border-b-black focus:border-[#FF6600] appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer" placeholder=" "
                     style={inputStyle}
                     onChange={(e) => onChange(e)}
                     value={value}
                 />
-                <label for="floating_outlined" class="absolute text-sm text-orange-600 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                <label for="floating_outlined"
+                    class="absolute text-sm text-orange-600 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                     {label}
                 </label>
             </div>

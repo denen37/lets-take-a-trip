@@ -14,13 +14,13 @@ const Header = () => {
 
 
     return (
-        <div className='h-[15vh] flex items-center bg-white gap-10 px-6 fixed top-0 right-0 left-0 z-[100]'>
+        <div className='h-[15vh] flex items-center bg-white gap-10 justify-between md:justify-start px-2 md:px-6 fixed top-0 right-0 left-0 z-[100]'>
             <Link to={'/'}>
                 <div className='w-[150px] px-4 cursor-pointer'>
                     <img src={images.logo} alt='' className='w-full' />
                 </div>
             </Link>
-            <div className='flex flex-1 items-center px-2 py-1 gap-3 rounded-s-full rounded-e-full border-2 border-solid transition-colors'
+            <div className='hidden md:flex flex-1 items-center px-2 py-1 gap-3 rounded-s-full rounded-e-full border-2 border-solid transition-colors'
                 style={{ borderColor: inputHasFocus ? '#f4712f' : '#d1d5db' }}>
                 <div className='w-[30px] box-border p-1  rounded-md cursor-pointer hover:bg-gray-200 active:bg-gray-100 transition-colors'>
                     <img className='w-full' src={images.search} alt="" />
@@ -102,7 +102,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <button className='text-white bg-[#f16620] rounded-[10px] px-6 py-1 text-base hover:opacity-75 actives:opacity-100 transition-opacity'>
+            <button className='text-white bg-[#f16620] rounded-[10px] hidden md:inline-block px-6 py-1 text-base hover:opacity-75 actives:opacity-100 transition-opacity'>
                 Book an Appointment
             </button>
 
@@ -151,7 +151,7 @@ const Header = () => {
                         <div className='w-3 aspect-square bg-red-600 absolute -top-1 -right-1 rounded-full'></div>
                     </div>
                 </Popover>
-                <div className='bg-gray-50 hover:bg-gray-200 active:bg-gray-50 transition-colors rounded-md w-[40px] box-border p-2 shadow shadow-gray-500 cursor-pointer'>
+                <div className='bg-gray-50 hover:bg-gray-200 active:bg-gray-50 hidden md:inline-block transition-colors rounded-md w-[40px] box-border p-2 shadow shadow-gray-500 cursor-pointer'>
                     <img className='w-full' src={images.gift} alt='' />
                 </div>
             </div>

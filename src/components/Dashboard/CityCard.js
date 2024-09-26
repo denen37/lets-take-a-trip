@@ -7,7 +7,7 @@ import user from '../../assets/icons/user (2).png'
 
 const CityCard = ({ city }) => {
     return (
-        <div className='flex p-3 items-center bg-[#d5d6d7] gap-8 rounded-2xl relative'>
+        <div className='flex p-3 items-center bg-[#e5e6e7] gap-8 rounded-2xl relative'>
             {
                 city.discount && <div className='py-2 px-3 text-[10px] absolute top-0 left-0 w-fit rounded-tl-2xl rounded-br-2xl text-white'
                     style={{ backgroundColor: 'rgba(241, 102, 32, 0.7)' }}>{city.discount}</div>
