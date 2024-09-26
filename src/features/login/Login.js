@@ -49,11 +49,11 @@ const Login = () => {
 
                     <div className='flex flex-col gap-6 mt-6 w-full'>
                         <FloatingLabelInputLine label={'User name'} icon={faUser} onChange={(e) => { setUsername(e.target.value) }} value={username}
-                            inputStyle={{ color: 'black' }}
+                            inputStyle={{ color: 'black', fontWeight: 600 }}
                         />
 
                         <FloatingLabelInputLine label={'Password'} type='password' icon={faLock} onChange={(e) => setPassword(e.target.value)} value={password}
-                            inputStyle={{ color: 'black' }}
+                            inputStyle={{ color: 'black', fontWeight: 600 }}
                         />
                     </div>
 
