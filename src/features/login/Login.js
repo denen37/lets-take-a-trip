@@ -48,9 +48,13 @@ const Login = () => {
 
 
                     <div className='flex flex-col gap-6 mt-6 w-full'>
-                        <FloatingLabelInputLine label={'User name'} icon={faUser} onChange={(e) => { setUsername(e.target.value) }} value={username} />
+                        <FloatingLabelInputLine label={'User name'} icon={faUser} onChange={(e) => { setUsername(e.target.value) }} value={username}
+                            inputStyle={{ color: 'black' }}
+                        />
 
-                        <FloatingLabelInputLine label={'Password'} type='password' icon={faLock} onChange={(e) => setPassword(e.target.value)} value={password} />
+                        <FloatingLabelInputLine label={'Password'} type='password' icon={faLock} onChange={(e) => setPassword(e.target.value)} value={password}
+                            inputStyle={{ color: 'black' }}
+                        />
                     </div>
 
                     <p className='mt-6'>By continuing you agree to <span className='text-orange-600 cursor-pointer'>Terms of services</span> and <span className='text-orange-600 cursor-pointer'>Privacy policy</span></p>
