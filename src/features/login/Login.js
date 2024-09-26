@@ -30,7 +30,7 @@ const Login = () => {
                     to={'/signup'}
                 >Sign Up</Link>
             </div>
-            <div className='flex flex-col lg:flex-row items-center min-h-screen bg-cover bg-no-repeat bg-center relative py-6' style={{ backgroundImage: `url(${bg})` }}>
+            <div className='flex flex-col lg:flex-row items-center min-h-screen bg-cover bg-no-repeat bg-center relative py-6 px-4' style={{ backgroundImage: `url(${bg})` }}>
                 <div className='h-[400px] w-[70%] px-20 ms-auto hidden lg:flex justify-end items-center rounded-s-[30px] bg-white bg-opacity-80'>
                     <div className='flex flex-col justify-center items-center relative'>
                         <h1 className='text-2xl font-bold'>Not yet taking a trip?</h1>
@@ -53,7 +53,7 @@ const Login = () => {
                         <FloatingLabelInputLine label={'Password'} type='password' icon={faLock} onChange={(e) => setPassword(e.target.value)} value={password} />
                     </div>
 
-                    <p className='mt-6'>By continuing to agree to <span className='text-orange-600 cursor-pointer'>Terms of services</span> and <span className='text-orange-600 cursor-pointer'>Privacy policy</span></p>
+                    <p className='mt-6'>By continuing you agree to <span className='text-orange-600 cursor-pointer'>Terms of services</span> and <span className='text-orange-600 cursor-pointer'>Privacy policy</span></p>
 
                     <button className='w-full py-2 text-white text-xl font-bold bg-orange-600 border border-orange-600 rounded-lg mt-6 transition-colors duration-300 hover:bg-transparent hover:text-orange-600'
                         onClick={handleClick}

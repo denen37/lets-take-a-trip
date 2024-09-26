@@ -71,7 +71,7 @@ const FloatingLabelInputLine = ({ label, type = 'text', value, icon, inputStyle,
         <div className='relative'>
             <div class="relative">
                 <input type={type} id="floating_outlined"
-                    class="block px-2.5 pb-2 pt-3.5 w-full text-gray-600 font-light bg-transparent border-b-2 border-b-black focus:border-[#FF6600] appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer" placeholder=" "
+                    class="block px-2.5 pb-2 pt-3.5 w-full text-black font-light bg-transparent border-b-2 border-b-black focus:border-[#FF6600] appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer" placeholder=" "
                     style={inputStyle}
                     onChange={(e) => onChange(e)}
                     value={value}
