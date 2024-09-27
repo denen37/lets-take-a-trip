@@ -29,21 +29,21 @@ const FamilyInfo = ({ index, onNavigate, state }) => {
     }, [state])
 
     return (
-        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-4/5 h-fit 
+        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-[95%] md:w-4/5 h-fit 
             transition-all duration-500 relative'
             ref={ref}>
             <h1 className='text-xl py-2'>Family Information</h1>
             <div className='h-[3px] bg-red-800'></div>
-            <p className='mt-5 mb-3'>Mother's Info</p>
-            <div className='flex flex-wrap items-center gap-x-8 gap-y-6 mt-8'>
+            <p className='mt-6 mb-3'>Mother's Info</p>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  items-start gap-x-8 gap-y-6'>
                 <VisaFloatingLabelInput label={'Mother\'s Given Name'} />
                 <VisaFloatingLabelInput label={'Mother\'s Surname'} type='text' />
                 <VisaTextInput label={'Mother\'s Date of Birth'} type='date' />
                 <VisaFloatingLabelInput label={'Mother\'s Given Names'} type='text' />
                 <VisaRadioInput label={'Is your Mother in the U.S?'} />
             </div>
-            <p className='my-3'>Father's Info</p>
-            <div className='flex flex-wrap items-center gap-x-8 gap-y-6 mt-1'>
+            <p className='mt-6 mb-3'>Father's Info</p>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 item-start gap-x-8 gap-y-6 mt-1'>
                 <VisaFloatingLabelInput label={'Father\'s Given Name'} />
                 <VisaFloatingLabelInput label={'Father\'s Surname'} type='text' />
                 <VisaTextInput label={'Father\'s Date of Birth'} type='date' />

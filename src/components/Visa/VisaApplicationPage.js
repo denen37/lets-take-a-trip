@@ -7,6 +7,11 @@ import PersonalInfo from './Forms/PersonalInfo'
 import PassportInfo from './Forms/PassportInfo'
 import TripInfo from './Forms/TripInfo'
 import FamilyInfo from './Forms/FamilyInfo'
+import Collapsible from 'react-collapsible';
+import './MobileNavExpander.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const pages = [
@@ -54,6 +59,7 @@ const VisaApplicationPage = () => {
     const [forms, setForms] = useImmer(pages);
     const [state, setState] = useState('center');
     const [currentPage, setCurrentPage] = useState(1);
+    const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
     const handleNavigationClick = (index, dir) => {
 
@@ -96,14 +102,27 @@ const VisaApplicationPage = () => {
                     </button>
                 </div>
             </div>
-            <div className='flex justify-center gap-10 py-2.5 bg-red-800'>
-                <Link className='text-white font-light'>DASHBOARD</Link>
+            <div className='hidden sm:flex justify-center gap-10 py-2.5 bg-red-800'>
+                <Link className='text-white font-light' to={'/dashboard'}>DASHBOARD</Link>
                 <Link className='text-white font-light'>HELP</Link>
                 <Link className='text-white font-light'>FAQ</Link>
                 <Link className='text-white font-light'>ABOUT US</Link>
                 <Link className='text-white font-light'>CONTACT</Link>
             </div>
-            <div className='flex'>
+            <div className='bg-red-800 text-white block sm:hidden'>
+                <Collapsible
+                    trigger={<div className='py-1 px-3'><FontAwesomeIcon icon={isMenuExpanded ? faTimes : faBars} size='2xl' /></div>}
+                    onTriggerOpening={() => setIsMenuExpanded(true)}
+                    onTriggerClosing={() => setIsMenuExpanded(false)}
+                >
+                    <Link className='hover:bg-white hover:text-red-800 py-1.5 px-1 transition-colors duration-300' to={'/dashboard'}>DASHBOARD</Link>
+                    <Link className='hover:bg-white hover:text-red-800 py-1.5 px-1 transition-colors duration-300'>HELP</Link>
+                    <Link className='hover:bg-white hover:text-red-800 py-1.5 px-1 transition-colors duration-300'>FAQ</Link>
+                    <Link className='hover:bg-white hover:text-red-800 py-1.5 px-1 transition-colors duration-300'>ABOUT US</Link>
+                    <Link className='hover:bg-white hover:text-red-800 py-1.5 px-1 transition-colors duration-300'>CONTACT</Link>
+                </Collapsible>
+            </div>
+            <div className='flex flex-col sm:flex-row'>
                 {
                     forms.map((form, index) => <div className='flex-1'>
                         <div className='flex items-center gap-5 py-2 bg-gray-200 px-2' key={form.id}>

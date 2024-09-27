@@ -32,7 +32,7 @@ const SignUp = () => {
                     to={'/login'}
                 >Login</Link>
             </div>
-            <div className='flex flex-col lg:flex-row items-center min-h-screen bg-cover bg-no-repeat bg-center relative py-6' style={{ backgroundImage: `url(${bg})` }}>
+            <div className='flex flex-col lg:flex-row items-center min-h-screen bg-cover bg-no-repeat bg-center relative py-6 px-6 lg:px-0' style={{ backgroundImage: `url(${bg})` }}>
                 <div className='h-[400px] w-[70%] px-20 ms-auto hidden lg:flex justify-end items-center rounded-s-[30px] bg-white bg-opacity-80 '>
                     <div className='flex flex-col justify-center items-center relative'>
                         <h1 className='text-2xl font-bold'>Already have an account?</h1>
@@ -49,14 +49,20 @@ const SignUp = () => {
 
 
                     <div className='flex flex-col gap-6 mt-6 w-full'>
-                        <FloatingLabelInputLine label={'User name'} icon={faUser} onChange={(e) => { setUsername(e.target.value) }} value={username} />
+                        <FloatingLabelInputLine label={'User name'} icon={faUser} onChange={(e) => { setUsername(e.target.value) }} value={username}
+                            inputStyle={{ color: 'black', fontWeight: 600 }}
+                        />
 
-                        <FloatingLabelInputLine label={'Email'} type={'email'} icon={faEnvelope} onChange={(e) => { setEmail(e.target.value) }} value={email} />
+                        <FloatingLabelInputLine label={'Email'} type={'email'} icon={faEnvelope} onChange={(e) => { setEmail(e.target.value) }} value={email}
+                            inputStyle={{ color: 'black', fontWeight: 600 }}
+                        />
 
-                        <FloatingLabelInputLine label={'Password'} type={'password'} icon={faLock} onChange={(e) => { setPassword(e.target.value) }} value={password} />
+                        <FloatingLabelInputLine label={'Password'} type={'password'} icon={faLock} onChange={(e) => { setPassword(e.target.value) }} value={password}
+                            inputStyle={{ color: 'black', fontWeight: 600 }}
+                        />
                     </div>
 
-                    <p className='mt-6'>By continuing to agree to <span className='text-orange-600 cursor-pointer'>Terms of services</span> and <span className='text-orange-600 cursor-pointer'>Privacy policy</span></p>
+                    <p className='mt-6 text-sm'>By continuing to agree to <span className='text-orange-600 cursor-pointer'>Terms of services</span> and <span className='text-orange-600 cursor-pointer'>Privacy policy</span></p>
 
                     <button className='w-full py-2 text-white text-xl font-bold bg-orange-600 border border-orange-600 rounded-lg mt-6 transition-colors duration-300 hover:bg-transparent hover:text-orange-600'
                         onClick={handleClick}

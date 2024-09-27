@@ -40,12 +40,12 @@ const PersonalInfo = ({ index, onNavigate, state }) => {
 
 
     return (
-        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-4/5 h-fit 
+        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-[95%] md:w-4/5 h-fit 
             transition-all duration-500 absolute'
             ref={ref}>
             <h1 className='text-xl py-2'>Personal Information</h1>
             <div className='h-[3px] bg-red-800'></div>
-            <div className='grid grid-cols-3 gap-x-8 gap-y-4 mt-8'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start gap-x-8 gap-y-4 mt-8'>
                 <VisaFloatingLabelInput label={'First name'} type='text' />
                 <VisaFloatingLabelInput label={'Surname'} type='text' />
                 <VisaTextInput label={'Date of Birth'} type='date' style={{}} />
@@ -85,21 +85,6 @@ const PersonalInfo = ({ index, onNavigate, state }) => {
                 <VisaFloatingLabelInput label={'National Identification Number'} type='text' style={{}} />
 
                 <VisaFloatingLabelInput label={'U.S Social Security Number'} type='text' style={{}} />
-
-                {/* <div className='text-gray-300 text-sm font-light'>
-                    <label className=''></label>
-                    <div className='flex gap-4 items-center'>
-                        <label>
-                            <input type='radio' className='me-2 accent-red-800' name='nationalities' />
-                            Yes
-                        </label>
-
-                        <label>
-                            <input type='radio' className='me-2 accent-red-800' name='nationalities' />
-                            No
-                        </label>
-                    </div>
-                </div> */}
 
                 <VisaRadioInput label={'Do you hold multiple nationalities?'} />
 

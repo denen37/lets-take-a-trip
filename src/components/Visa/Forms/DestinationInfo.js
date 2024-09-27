@@ -42,12 +42,12 @@ const DestinationInfo = ({ index, onNavigate, state }) => {
 
 
     return (
-        <form className={`rounded-xl bg-white mt-8 px-5 py-4 w-3/5 h-fit 
+        <form className={`rounded-xl bg-white mt-8 px-5 py-4 w-[95%] md:w-3/5 h-fit 
             transition-transform duration-500 absolute`}
             ref={ref}>
             <h1 className='text-xl py-2'>Destination Information</h1>
             <div className='h-[3px] bg-red-800'></div>
-            <div className='flex gap-8 mt-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start  gap-8 mt-4'>
                 <div className='flex flex-col gap-5'>
                     <div>
                         <p className='text-gray-600 text-sm py-3'>Country of Departure</p>
@@ -79,7 +79,7 @@ const DestinationInfo = ({ index, onNavigate, state }) => {
                             placeholder={'Select your destination country'}
                         />
                     </div>
-                    <div className='flex flex-wrap gap-10'>
+                    <div className='flex flex-col sm:flex-row gap-10'>
                         <div>
                             <p className='text-gray-600 text-sm py-3 '>Family Members</p>
                             <Select

@@ -30,39 +30,24 @@ const TripInfo = ({ index, onNavigate, state }) => {
     }, [state])
 
     return (
-        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-4/5 h-fit 
+        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-[95%] md:w-4/5 h-fit 
             transition-all duration-500 absolute'
             ref={ref}>
             <h1 className='text-xl py-2'>Trip Information</h1>
             <div className='h-[3px] bg-red-800'></div>
-            <div className='flex flex-wrap items-center gap-x-8 gap-y-6 mt-8'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  items-start gap-x-8 gap-y-6 mt-8'>
                 <VisaFloatingLabelTextArea label={'Purpose of your trip to U.S'} />
                 <VisaFloatingLabelInput label={'Intended Date of Arrival'} type='text' />
                 <VisaFloatingLabelInput label={'Intended length of stay in U.S(in months)'} type='number' />
                 <VisaFloatingLabelInput label={'Address where you will stay in U.S'} type='text' />
             </div>
-            <p className='my-3'>Trip Management</p>
-            <div className='flex flex-wrap items-center gap-x-8 gap-y-6 mt-1'>
+            <p className='my-3 mt-6'>Trip Management</p>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  items-start gap-x-8 gap-y-6 mt-1'>
                 <VisaFloatingLabelInput label={'Person/Entity paying for your trip'} type='text' />
                 <VisaFloatingLabelInput label={'Company/Organization paying for your Trip Error'} type='text' />
                 <VisaFloatingLabelInput label={'Telephone Number'} type='text' />
                 <VisaFloatingLabelInput label={'Relationship to you'} type='text' />
                 <VisaFloatingLabelInput label={'Other persons travelling with you'} type='text' />
-
-                {/* <div className='text-gray-300 text-sm font-light'>
-                    <label className=''></label>
-                    <div className='flex gap-4 items-center'>
-                        <label>
-                            <input type='radio' className='me-2 accent-red-800' name='lostpassport' />
-                            Yes
-                        </label>
-
-                        <label>
-                            <input type='radio' className='me-2 accent-red-800' name='lostpassport' />
-                            No
-                        </label>
-                    </div>
-                </div> */}
 
                 <VisaRadioInput label={'Are you travelling as part of a group or organization?'} />
 

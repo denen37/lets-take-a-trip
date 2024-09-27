@@ -39,12 +39,12 @@ const PassportInfo = ({ index, onNavigate, state }) => {
 
 
     return (
-        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-4/5 h-fit 
+        <form className='rounded-xl bg-white mt-8 px-5 py-4 w-[95%] md:w-4/5 h-fit 
             transition-all duration-500 absolute'
             ref={ref}>
             <h1 className='text-xl py-2'>Passport Information</h1>
             <div className='h-[3px] bg-red-800'></div>
-            <div className='flex flex-wrap items-center gap-x-8 gap-y-6 mt-8'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  items-start gap-x-8 gap-y-6 mt-8'>
                 <VisaFloatingLabelInput label={'Passport Number'} type='text' />
                 <Select
                     defaultValue={selectedOption}
@@ -73,21 +73,6 @@ const PassportInfo = ({ index, onNavigate, state }) => {
                     theme={customTheme}
                     placeholder={'Country were issued'}
                 />
-
-                {/* <div className='text-gray-300 text-sm font-light'>
-                    <label className=''></label>
-                    <div className='flex gap-4 items-center'>
-                        <label>
-                            <input type='radio' className='me-2 accent-red-800' name='lostpassport' />
-                            Yes
-                        </label>
-
-                        <label>
-                            <input type='radio' className='me-2 accent-red-800' name='lostpassport' />
-                            No
-                        </label>
-                    </div>
-                </div> */}
 
                 <VisaRadioInput label={'Have you ever lost a passport or had stolen one?'} />
             </div>
