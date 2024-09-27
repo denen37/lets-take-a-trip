@@ -135,7 +135,7 @@ const VisaApplicationPage = () => {
                     </div>)
                 }
             </div>
-            <div className='bg-gray-100 flex-1 pb-10 relative'>
+            <div className='bg-gray-100 flex-1 pb-10 relative overflow-x-hidden'>
                 {
                     forms.map((form, index) => form.form(index, handleNavigationClick))
                 }
